@@ -3,6 +3,7 @@ package com.example.musicplayer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.net.Uri;
@@ -24,7 +25,9 @@ import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 FloatingActionButton btnPlay,btnPlayPrevious,btnPlayNext;
+ImageButton btnBack,btnFavorite;
 TextView textViewCurrentTime,textViewTotalTime,txtSongName;
+Intent AllSongActivity;
 private List<Uri> songUris;
 private int currentIndex = 0;
 private SeekBar seekBar;
@@ -32,11 +35,9 @@ private SeekBar seekBar;
     MediaPlayer mp = new MediaPlayer();
     @SuppressLint("MissingInflatedId")
     @Override
-
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         btnPlay = findViewById(R.id.btnPlay);
         seekBar = findViewById(R.id.seekBar);
         textViewCurrentTime = findViewById(R.id.txtCountStart);
@@ -44,6 +45,10 @@ private SeekBar seekBar;
         btnPlayPrevious = findViewById(R.id.btnPlayPrevious);
         btnPlayNext = findViewById(R.id.btnPlayNext);
         txtSongName = findViewById(R.id.txtSongTitle);
+        btnBack = findViewById(R.id.btnBack);
+        btnFavorite = findViewById(R.id.btnFavourite);
+        //Initialized activity
+        AllSongActivity = new Intent(this, AllSong.class);
 //.............................................................................
         // Songs Uri...
         String song1 = "android.resource://"+getPackageName()+"/raw/arijit_singh_song";
@@ -123,6 +128,12 @@ private SeekBar seekBar;
                 seekMax();
             }
 
+        });
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(AllSongActivity);
+            }
         });
 //....................................................................................
         // Setting song duration

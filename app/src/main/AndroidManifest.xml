@@ -20,11 +20,12 @@
         <activity
             android:name=".playlistActivity"
             android:exported="false" />
-        <activity
-            android:name=".AllSong"
-            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".AllSong"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
