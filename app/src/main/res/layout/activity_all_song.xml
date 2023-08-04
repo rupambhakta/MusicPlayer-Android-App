@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center"
-    android:background="#fff"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context=".AllSong">
 
@@ -76,8 +76,9 @@
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="0dp"
-            android:layout_height="80dp"
+            android:layout_height="75dp"
             android:layout_marginBottom="1dp"
+            android:background="#E6E9EA"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,7 +86,7 @@
             tools:ignore="MissingConstraints">
 
             <ImageView
-                android:layout_width="10dp"
+                android:layout_width="8dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:id="@+id/imgSongPic"
@@ -101,6 +102,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
                     android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="#000000"
                     android:id="@+id/txtSong_Name"
                     android:text="Song Name"/>
                 <TextView
@@ -108,6 +111,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:id="@+id/txtSinger_Name"
+                    android:textColor="#000000"
                     android:text="Singer Name"/>
             </LinearLayout>
 
